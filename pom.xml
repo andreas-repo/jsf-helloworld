@@ -8,9 +8,113 @@
     <artifactId>jsf-helloworld</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <packaging>war</packaging>
+
+    <developers>
+        <developer>
+            <id>am</id>
+            <name>Andreas Mayer</name>
+            <email>andreas.mayer@gepardec.com</email>
+            <roles>
+                <role>Owner</role>
+            </roles>
+        </developer>
+    </developers>
+
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
+
+        <!-- Build Plugin versions -->
+        <version.plugin.clean>3.0.0</version.plugin.clean>
+        <version.plugin.compiler>3.5.1</version.plugin.compiler>
+        <version.plugin.build-helper>1.10</version.plugin.build-helper>
+        <version.plugin.processor>3.1.0</version.plugin.processor>
+        <version.plugin.dependency>2.10</version.plugin.dependency>
+        <version.plugin.enforcer>1.4.1</version.plugin.enforcer>
+        <version.plugin.jar>2.6</version.plugin.jar>
+        <version.plugin.source>3.0.0</version.plugin.source>
+        <version.plugin.release>2.5.3</version.plugin.release>
+        <version.plugin.resources>2.7</version.plugin.resources>
+        <version.plugin.javadoc>2.10.3</version.plugin.javadoc>
+        <version.plugin.surefire>2.19.1</version.plugin.surefire>
+        <version.plugin.processor>2.2.4</version.plugin.processor>
+        <version.plugin.surefire>2.19.1</version.plugin.surefire>
+        <version.plugin.war>2.6</version.plugin.war>
+        <version.plugin.ejb>2.5.1</version.plugin.ejb>
+        <version.plugin.liquibase>3.5.3</version.plugin.liquibase>
+        <version.plugin.exec>1.5.0</version.plugin.exec>
+        <version.plugin.gmavenplus>1.5</version.plugin.gmavenplus>
+
+        <!-- Build Properties -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.min.version>3.0</maven.min.version>
+        <jdk.min.version>${maven.compiler.source}</jdk.min.version>
+        <downloadSources>true</downloadSources>
+        <targetJdk>${maven.compiler.target}</targetJdk>
+        <useReleaseProfile>false</useReleaseProfile>
+
+        <!-- Dependencies Versions -->
+        <!-- Dependencies Versions Specifications -->
+        <version.javaee-api>7.0</version.javaee-api>
+
+        <!-- Dependencies Logger -->
+        <version.log4j>1.2.17</version.log4j>
+        <version.slf4-log4j>1.7.21</version.slf4-log4j>
+
+        <version.weld>3.0.0.Final</version.weld>
+        <version.primefaces>6.1</version.primefaces>
+        <version.omnifaces>2.6.6</version.omnifaces>
+        <version.primefaces-all-themes>1.0.8</version.primefaces-all-themes>
     </properties>
+
+
+    <dependencies>
+        <!-- Dependencies Specifications -->
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>${version.javaee-api}</version>
+        </dependency>
+
+        <!-- CDI/JSF dependencies -->
+        <dependency>
+            <groupId>org.jboss.weld.se</groupId>
+            <artifactId>weld-se-core</artifactId>
+            <version>${version.weld}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.primefaces</groupId>
+            <artifactId>primefaces</artifactId>
+            <version>${version.primefaces}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.primefaces.extensions</groupId>
+            <artifactId>all-themes</artifactId>
+            <version>${version.primefaces-all-themes}</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.omnifaces</groupId>
+            <artifactId>omnifaces</artifactId>
+            <version>${version.omnifaces}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <filteringDeploymentDescriptors>true</filteringDeploymentDescriptors>
+                    <failOnMissingWebXml>true</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
     
 </project>
