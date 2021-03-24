@@ -7,6 +7,7 @@ import java.io.Serializable;
 @ManagedBean(name = "navigationController", eager = true)
 @RequestScoped
 public class NavigationController implements Serializable {
+    private static final long serialVersionUID = 1L;
     public String moveToPageTwo() {
         return "page2";
     }

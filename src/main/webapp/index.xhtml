@@ -20,13 +20,21 @@
 
       <h:form>
          <h3>Using JSF outcome</h3>
-         <h:commandButton action = "page1" value = "Page1" />
+         <h:commandButton action="page1" value="Page1" />
       </h:form>
 
       <h:form>
          <h3>Using a managed bean for implicit navigation</h3>
-         <h:commandButton action = "#{navigationController.moveToPageTwo}" value = "Page2" />
+         <h:commandButton action="#{navigationController.moveToPageTwo}" value="Page2" />
       </h:form>
+
+      <h:form>
+         <h3>Forward</h3>
+         <h:commandButton action="page3" value="Page3" />
+         <h3>Redirect</h3>
+         <h:commandButton action="page3?faces-redirect=true" value="Page3" />
+      </h:form>
+
    </h:body>
 
 

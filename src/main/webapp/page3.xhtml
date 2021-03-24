@@ -11,12 +11,10 @@
     </h:head>
     <h:body>
         <f:view>
-            <h:outputLabel value="Hello, world"/>
+            <h:outputLabel value="Forward vs Redirection Navigation"/>
         </f:view>
-
         <h:form>
-            <h3>Using a managed bean for implicit navigation back to the landing page</h3>
-            <h:commandButton action="#{navigationController.moveToLandingPage}" value="Return" />
+            <h:commandButton action="index?faces-redirect=true" value="Index" />
         </h:form>
     </h:body>
 
