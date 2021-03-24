@@ -97,11 +97,6 @@
             <type>pom</type>
             <scope>import</scope>
         </dependency>
-        <dependency>
-            <groupId>org.omnifaces</groupId>
-            <artifactId>omnifaces</artifactId>
-            <version>${version.omnifaces}</version>
-        </dependency>
     </dependencies>
 
     <build>

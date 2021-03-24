@@ -18,7 +18,9 @@
     <facet type="jpa" name="JPA">
       <configuration>
         <setting name="validation-enabled" value="true" />
-        <datasource-mapping />
+        <datasource-mapping>
+          <factory-entry name="jsf-helloworld" />
+        </datasource-mapping>
         <naming-strategy-map />
       </configuration>
     </facet>
@@ -87,6 +89,5 @@
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.primefaces.themes:ui-lightness:1.0.8" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.primefaces.themes:vader:1.0.8" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.primefaces.themes:home:1.0.8" level="project" />
-    <orderEntry type="library" name="Maven: org.omnifaces:omnifaces:2.6.6" level="project" />
   </component>
 </module>
