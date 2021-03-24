@@ -10,22 +10,24 @@
       <h:outputLabel value="Hello, world"/>
    </f:view>
 
-   <head>
+   <h:head>
       <title>JSF Tutorial!</title>
-   </head>
+   </h:head>
 
-   <body>
-   <h1>Hello World!</h1>
-   #{helloWorld.message}
-   </body>
+   <h:body>
+      <h1>Hello World!</h1>
+      #{helloWorld.message}
 
-   <h:form>
-      <h3>Using JSF outcome</h3>
-      <h:commandButton action = "page1" value = "Page1" />
-   </h:form>
+      <h:form>
+         <h3>Using JSF outcome</h3>
+         <h:commandButton action = "page1" value = "Page1" />
+      </h:form>
 
-   <h:form>
-      <h3>Using a managed bean for implicit navigation</h3>
-      <h:commandButton action = "#{navigationController.moveToPageTwo}" value = "Page2" />
-   </h:form>
+      <h:form>
+         <h3>Using a managed bean for implicit navigation</h3>
+         <h:commandButton action = "#{navigationController.moveToPageTwo}" value = "Page2" />
+      </h:form>
+   </h:body>
+
+
 </html>

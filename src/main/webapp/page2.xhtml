@@ -6,14 +6,18 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
-    <f:view>
-        <h:outputLabel value="Hello, world"/>
-    </f:view>
+    <h:head>
 
-    <h:form>
-        <h3>Using a managed bean for implicit navigation back to the landing page</h3>
-        <h:commandButton action = "#{navigationController.moveToLandingPage}" value = "Return" />
-    </h:form>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:outputLabel value="Hello, world"/>
+        </f:view>
 
+        <h:form>
+            <h3>Using a managed bean for implicit navigation back to the landing page</h3>
+            <h:commandButton action = "#{navigationController.moveToLandingPage}" value = "Return" />
+        </h:form>
+    </h:body>
 
 </html>
