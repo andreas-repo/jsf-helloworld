@@ -175,6 +175,39 @@
          <h:message for = "urlValidationInput" style = "color:red" />
       </h:form>
 
+      <hr></hr>
+
+      <h2>DataTable Example</h2>
+
+      <h:form>
+         <h:dataTable value = "#{employeeUserData.employees}" var = "employee"
+                      styleClass = "employeeTable"
+                      headerClass = "employeeTableHeader"
+                      rowClasses = "employeeTableOddRow,employeeTableEvenRow">
+
+            <h:column>
+               <f:facet name = "header">Name</f:facet>
+               #{employee.name}
+            </h:column>
+
+            <h:column>
+               <f:facet name = "header">Department</f:facet>
+               #{employee.department}
+            </h:column>
+
+            <h:column>
+               <f:facet name = "header">Age</f:facet>
+               #{employee.age}
+            </h:column>
+
+            <h:column>
+               <f:facet name = "header">Salary</f:facet>
+               #{employee.salary}
+            </h:column>
+         </h:dataTable>
+      </h:form>
+
+      <hr></hr>
 
    </h:body>
 </html>
