@@ -16,6 +16,7 @@
 
    <h:body>
       <h1>Hello World!</h1>
+
       <hr />
 
       #{helloWorld.message}
@@ -44,7 +45,7 @@
          </h:commandLink>
       </h:form>
 
-      <hr />
+      <hr></hr>
 
       <h:form>
          <h3>Forward</h3>
@@ -53,55 +54,61 @@
          <h:commandButton action="page3?faces-redirect=true" value="Page3" />
       </h:form>
 
+      <hr></hr>
+
       <h:form>
          <h3>Link to Tags Page</h3>
          <h:commandButton action="tags" value="Tags" />
       </h:form>
-      <hr/>
+
+      <hr></hr>
+
       <h3>Link to template example</h3>
       <h:form>
          <h:commandButton action="template-example.xhtml?faces-redirect=true" value="Template Example" />
       </h:form>
 
-      <hr>
-         <h:form>
-            <h3>Link to Number Convertion</h3>
-            <h:commandButton action="convertNumberExample?faces-redirect=true" value="Number Convertion Example" />
-         </h:form>
-      </hr>
+      <hr></hr>
 
-      <hr>
-         <h:form>
-            <h3>ConvertDateTime Example</h3>
+      <h3>Link to Number Convertion</h3>
 
-            <h:inputText id = "dateInput" value = "#{userData.date}"
-                         label = "Date" >
-               <f:convertDateTime pattern = "dd.mm.yyyy" />
-            </h:inputText>
-            <h:commandButton value = "submit" action = "resultConvertDate"/>
-         </h:form>
+      <h:form>
+         <h:commandButton action="convertNumberExample?faces-redirect=true" value="Number Convertion Example" />
+      </h:form>
 
-         <h:message for = "dateInput" style = "color:red" />
+      <hr></hr>
 
-         <h:outputText value = "12.01.2012" >
+      <h:form>
+         <h3>ConvertDateTime Example</h3>
+
+         <h:inputText id = "dateInput" value = "#{userData.date}"
+                      label = "Date" >
             <f:convertDateTime pattern = "dd.mm.yyyy" />
-         </h:outputText>
-      </hr>
+         </h:inputText>
+         <h:commandButton value = "submit" action = "resultConvertDate"/>
+      </h:form>
 
-      <hr>
-         <h:form>
-            <h2>Custom Converter Example</h2>
+      <h:message for = "dateInput" style = "color:red" />
 
-            <h:inputText id = "urlInput" value = "#{urlUserData.data}"
-                         label = "URL" >
-               <f:converter converterId = "com.example.application.CustomUrlConverter" />
-            </h:inputText>
-            <h:commandButton value = "submit" action = "resultCustomUrlConverter"/>
-            <h:message for = "urlInput" style = "color:red" />
-         </h:form>
-      </hr>
+      <h:outputText value = "12.01.2012" >
+            <f:convertDateTime pattern = "dd.mm.yyyy" />
+      </h:outputText>
 
-      <hr>
+      <hr></hr>
+
+      <h:form>
+         <h2>Custom Converter Example</h2>
+
+         <h:inputText id = "urlInput" value = "#{urlUserData.data}"
+                      label = "URL" >
+            <f:converter converterId = "com.example.application.CustomUrlConverter" />
+         </h:inputText>
+         <h:commandButton value = "submit" action = "resultCustomUrlConverter"/>
+         <h:message for = "urlInput" style = "color:red" />
+      </h:form>
+
+
+      <hr></hr>
          <h:form>
             <h2>h:validateLength Example</h2>
 
@@ -112,7 +119,8 @@
             <h:commandButton value = "submit" action = "resultValidateLength"/>
             <h:message for = "nameInput" style = "color:red" />
          </h:form>
-      </hr>
+
+      <hr></hr>
 
       <h2>h:validateLongRange Example</h2>
       <h:outputText value = "Validates if the input lies between 5 and 200" />
@@ -129,14 +137,44 @@
       <hr></hr>
 
       <h2>h:validateDoubleRange Example</h2>
-
+      <h:outputText value = "Validates if the salary lies between 1000.50 and 10000.50" />
       <h:form>
          <h:inputText id = "salaryInput" value = "#{userData.salary}"
                       label = "salary" >
             <f:validateDoubleRange minimum = "1000.50" maximum = "10000.50" />
          </h:inputText>
-         <h:commandButton value = "submit" action = "result"/>
+         <h:commandButton value = "submit" action = "resultValidateDouble"/>
          <h:message for = "salaryInput" style = "color:red" />
       </h:form>
+
+      <hr></hr>
+
+      <h2>h:validateRegex Example</h2>
+      <!-- password contains lower case letters only and.
+      length of the password should be greater than 6. -->
+
+      <h:form>
+         <h:inputSecret id = "passwordInput" value = "#{userData.password}"
+                        label = "password" >
+            <f:validateRegex pattern = "((? = .*[a-z]).{6,})" />
+         </h:inputSecret>
+         <h:commandButton value = "submit" action = "resultValidateRegex"/>
+         <h:message for = "passwordInput" style = "color:red" />
+      </h:form>
+
+      <hr></hr>
+
+      <h2>Custom URL Validator Example</h2>
+
+      <h:form>
+         <h:inputText id = "urlValidationInput" value = "#{userData.data}"
+                      label = "URL" >
+            <f:validator validatorId = "com.example.application.UrlValidator" />
+         </h:inputText>
+         <h:commandButton value = "submit" action = "resultCustomValidator"/>
+         <h:message for = "urlValidationInput" style = "color:red" />
+      </h:form>
+
+
    </h:body>
 </html>
