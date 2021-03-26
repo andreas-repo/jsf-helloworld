@@ -100,5 +100,43 @@
             <h:message for = "urlInput" style = "color:red" />
          </h:form>
       </hr>
+
+      <hr>
+         <h:form>
+            <h2>h:validateLength Example</h2>
+
+            <h:inputText id = "nameInput" value = "#{userData.name}"
+                         label = "name" >
+               <f:validateLength minimum = "5" maximum = "8" />
+            </h:inputText>
+            <h:commandButton value = "submit" action = "resultValidateLength"/>
+            <h:message for = "nameInput" style = "color:red" />
+         </h:form>
+      </hr>
+
+      <h2>h:validateLongRange Example</h2>
+      <h:outputText value = "Validates if the input lies between 5 and 200" />
+
+      <h:form>
+         <h:inputText id = "ageInput" value = "#{userData.age}"
+                      label = "age" >
+            <f:validateLongRange minimum = "5" maximum = "200" />
+         </h:inputText>
+         <h:commandButton value = "submit" action = "result"/>
+         <h:message for = "ageInput" style = "color:red" />
+      </h:form>
+
+      <hr></hr>
+
+      <h2>h:validateDoubleRange Example</h2>
+
+      <h:form>
+         <h:inputText id = "salaryInput" value = "#{userData.salary}"
+                      label = "salary" >
+            <f:validateDoubleRange minimum = "1000.50" maximum = "10000.50" />
+         </h:inputText>
+         <h:commandButton value = "submit" action = "result"/>
+         <h:message for = "salaryInput" style = "color:red" />
+      </h:form>
    </h:body>
 </html>
