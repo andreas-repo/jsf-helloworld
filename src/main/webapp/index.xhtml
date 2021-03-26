@@ -69,5 +69,36 @@
             <h:commandButton action="convertNumberExample?faces-redirect=true" value="Number Convertion Example" />
          </h:form>
       </hr>
+
+      <hr>
+         <h:form>
+            <h3>ConvertDateTime Example</h3>
+
+            <h:inputText id = "dateInput" value = "#{userData.date}"
+                         label = "Date" >
+               <f:convertDateTime pattern = "dd.mm.yyyy" />
+            </h:inputText>
+            <h:commandButton value = "submit" action = "resultConvertDate"/>
+         </h:form>
+
+         <h:message for = "dateInput" style = "color:red" />
+
+         <h:outputText value = "12.01.2012" >
+            <f:convertDateTime pattern = "dd.mm.yyyy" />
+         </h:outputText>
+      </hr>
+
+      <hr>
+         <h:form>
+            <h2>Custom Converter Example</h2>
+
+            <h:inputText id = "urlInput" value = "#{urlUserData.data}"
+                         label = "URL" >
+               <f:converter converterId = "com.example.application.CustomUrlConverter" />
+            </h:inputText>
+            <h:commandButton value = "submit" action = "resultCustomUrlConverter"/>
+            <h:message for = "urlInput" style = "color:red" />
+         </h:form>
+      </hr>
    </h:body>
 </html>
